@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register a new complaint">
+    <title>New Complaint</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <h1 class="logo">ComplaintBoard</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="add.html" class="active">New Complaint</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="form-wrapper">
+            <header class="page-header">
+                <h2>Register a Complaint</h2>
+            </header>
+            <form id="complaint-form" class="card fade-in">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" required placeholder="New York">
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" required placeholder="+1 234 567 8900">
+                </div>
+
+                <div class="form-group">
+                    <label for="complaintText">Complaint Details</label>
+                    <textarea id="complaintText" required placeholder="Please describe your issue..." rows="5"></textarea>
+                </div>
+
+                <button type="submit" class="btn primary-btn submit-btn">Submit Complaint</button>
+            </form>
+        </div>
+
+        <!-- AI Follow-up Modal -->
+        <div id="ai-modal" class="modal hidden">
+            <div class="modal-content card">
+                <div id="ai-loading" class="ai-loading fade-in">
+                    <div class="spinner"></div>
+                    <p>Analyzing complaint and generating a follow-up question...</p>
+                </div>
+                <div id="ai-question-container" class="hidden fade-in">
+                    <h3>AI Follow-up Question</h3>
+                    <p id="ai-question-text" class="ai-question-text"></p>
+                    <div class="form-group">
+                        <label for="ai-answer">Your Answer</label>
+                        <textarea id="ai-answer" placeholder="Provide your answer here..." rows="4"></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button id="ai-skip-btn" type="button" class="btn secondary-btn">Skip</button>
+                        <button id="ai-submit-btn" type="button" class="btn primary-btn submit-btn">Submit Final Complaint</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ComplaintBoard. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
